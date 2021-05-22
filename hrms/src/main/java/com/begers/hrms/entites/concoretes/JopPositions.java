@@ -5,12 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Job_Positions")
+@Table(name="Jop_Positions")
 public class JopPositions {
 	
 	@Id
@@ -18,9 +17,19 @@ public class JopPositions {
 	@Column(name="Id")
 	private int id;
 	
-	@Column(name="JobName")
-	private String JobName;
+	@Column(name="JopName")
+	private String JopName;
 
 	@Column(name="PositionId")
 	private int PositionId;
+
+	public JopPositions(int id, String jopName, int positionId) {
+		super();
+		this.id = id;
+		JopName = jopName;
+		PositionId = positionId;
+	}
+
+	
+	
 }

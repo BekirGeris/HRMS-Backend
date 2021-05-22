@@ -10,7 +10,7 @@ import com.begers.hrms.business.abstacts.JopPositionService;
 import com.begers.hrms.entites.concoretes.JopPositions;
 
 @RestController
-@RequestMapping("api/JopPositions")
+@RequestMapping("/api/JopPositions")
 public class JopPositionsController {
 	
 	private JopPositionService jopPositionService;
