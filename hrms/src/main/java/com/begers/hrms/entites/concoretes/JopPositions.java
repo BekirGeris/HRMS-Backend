@@ -3,33 +3,30 @@ package com.begers.hrms.entites.concoretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="Jop_Positions")
+@Table(name="jop_positions")
+@AllArgsConstructor
+@NoArgsConstructor
 public class JopPositions {
 	
 	@Id
-	@GeneratedValue
-	@Column(name="Id")
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
+	private int Id;
 	
-	@Column(name="JopName")
+	@Column(name="jop_name")
 	private String JopName;
 
-	@Column(name="PositionId")
+	@Column(name="position_id")
 	private int PositionId;
-
-	public JopPositions(int id, String jopName, int positionId) {
-		super();
-		this.id = id;
-		JopName = jopName;
-		PositionId = positionId;
-	}
-
-	
 	
 }
