@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Table(name="Jop_Seekers")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JopSeekers extends User{
+public class JopSeekerUser extends User{
 
 	@Column(name="FirstName")
 	private String firstName;
