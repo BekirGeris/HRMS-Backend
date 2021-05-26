@@ -21,7 +21,7 @@ public class EmployerUser extends User{
 	private String companyName;
 	
 	@Column(name="WebSitesi")
-	private String webSie;
+	private String webSite;
 	
 	@Column(name="Telefon")
 	private String telephoneNumber;

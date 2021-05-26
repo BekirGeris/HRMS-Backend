@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.begers.hrms.entites.concoretes.JopSeekerUser;
 
-
 @Repository
 public interface JopSeekerUserDao extends JpaRepository<JopSeekerUser, Integer>{
 

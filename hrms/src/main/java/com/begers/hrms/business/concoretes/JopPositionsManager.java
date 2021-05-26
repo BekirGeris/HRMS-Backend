@@ -23,7 +23,6 @@ public class JopPositionsManager implements JopPositionService{
 
 	@Override
 	public List<JopPositions> gatAll() {
-		System.out.println(jopPositionsDao.findAll().toString());
 		return this.jopPositionsDao.findAll();
 	}
 
