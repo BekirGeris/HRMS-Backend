@@ -12,7 +12,7 @@ import com.begers.hrms.entites.concoretes.JopPositions;
 @Service
 public class JopPositionsManager implements JopPositionService{
 
-	JopPositionsDao jopPositionsDao;
+	private JopPositionsDao jopPositionsDao;
 	
 	
 	@Autowired
