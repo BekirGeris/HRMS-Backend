@@ -1,5 +1,7 @@
 package com.begers.hrms.business.concoretes;
 
-public class JopSeekerUserManager {
+import com.begers.hrms.business.abstacts.JopSeekerUserService;
+
+public class JopSeekerUserManager implements JopSeekerUserService{
 
 }

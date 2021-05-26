@@ -1,5 +1,7 @@
 package com.begers.hrms.business.concoretes;
 
-public class EmployerUserManager {
+import com.begers.hrms.business.abstacts.EmployerUserService;
+
+public class EmployerUserManager implements EmployerUserService{
 
 }

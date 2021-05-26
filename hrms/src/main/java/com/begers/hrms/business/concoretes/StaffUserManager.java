@@ -1,5 +1,7 @@
 package com.begers.hrms.business.concoretes;
 
-public class StaffUserManager {
+import com.begers.hrms.business.abstacts.StaffUserService;
+
+public class StaffUserManager implements StaffUserService{
 
 }
