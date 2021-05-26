@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.begers.hrms.business.abstacts.UserService;
+import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.entites.concoretes.User;
 
 @RestController
@@ -23,7 +24,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/getAll")
-	public List<User> getAll(){
+	public DataResult<List<User>> getAll(){
 		return this.userService.getAll();
 	}
 }

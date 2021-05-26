@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.begers.hrms.business.abstacts.JopPositionService;
+import com.begers.hrms.core.utilities.result.DataResult;
+import com.begers.hrms.core.utilities.result.Result;
 import com.begers.hrms.entites.concoretes.JopPositions;
 
 @RestController
@@ -23,7 +26,12 @@ public class JopPositionsController {
 	}
 	
 	@GetMapping("/getAll")
-	public List<JopPositions> getAll(){
+	public DataResult<List<JopPositions>> getAll(){
 		return this.jopPositionService.gatAll();
+	}
+	
+	@PostMapping("/add")
+	public Result add(JopPositions jopPositions) {
+		return this.jopPositionService.add(jopPositions);
 	}
 }

@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.entites.concoretes.User;
 
 @Service
 public interface UserService {
-	List<User> getAll();
+	DataResult<List<User>> getAll();
 }
