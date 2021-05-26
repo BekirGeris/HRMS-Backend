@@ -22,7 +22,7 @@ public class JopPositionsController {
 		this.jopPositionService = jopPositionService;
 	}
 	
-	@GetMapping("getAll")
+	@GetMapping("/getAll")
 	public List<JopPositions> getAll(){
 		return this.jopPositionService.gatAll();
 	}

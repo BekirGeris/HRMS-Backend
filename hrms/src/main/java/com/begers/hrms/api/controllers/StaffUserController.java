@@ -24,6 +24,6 @@ public class StaffUserController {
 	
 	@GetMapping("/getAll")
 	public List<StaffUser> getAll(){
-		return null;
+		return this.staffUserService.getAll();
 	}
 }

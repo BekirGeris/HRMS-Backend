@@ -24,7 +24,7 @@ public class EmployerUserController {
 	
 	@GetMapping("/getAll")
 	public List<EmployerUser> getAll(){
-		return null;
+		return this.employerUserService.getAll();
 	}
 	
 }

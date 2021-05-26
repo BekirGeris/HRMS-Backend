@@ -24,6 +24,6 @@ public class JopSeekerUserController {
 	
 	@GetMapping("/getAll")
 	public List<JopSeekerUser> getAll(){
-		return null;
+		return this.jopSeekerUserService.getAll();
 	}
 }
