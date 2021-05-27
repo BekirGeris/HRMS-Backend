@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.core.utilities.result.Result;
-import com.begers.hrms.entites.concoretes.JopPositions;
+import com.begers.hrms.entites.concoretes.JobPositions;
 
 @Service
-public interface JopPositionService {
-	DataResult<List<JopPositions>> gatAll();
+public interface JobPositionService {
+	DataResult<List<JobPositions>> gatAll();
 	
-	Result add(JopPositions jopPositions);
+	Result add(JobPositions jobPositions);
 }

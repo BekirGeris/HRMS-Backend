@@ -8,30 +8,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.begers.hrms.business.abstacts.JopSeekerUserService;
+import com.begers.hrms.business.abstacts.JobPositionService;
 import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.core.utilities.result.Result;
-import com.begers.hrms.entites.concoretes.JopSeekerUser;
+import com.begers.hrms.entites.concoretes.JobPositions;
 
 @RestController
-@RequestMapping("/api/JopSeekers")
-public class JopSeekerUserController {
-
-	private JopSeekerUserService jopSeekerUserService;
+@RequestMapping("/api/JobPositions")
+public class JobPositionsController {
+	
+	private JobPositionService jobPositionService;
 
 	@Autowired
-	public JopSeekerUserController(JopSeekerUserService jopSeekerUserService) {
+	public JobPositionsController(JobPositionService jobPositionService) {
 		super();
-		this.jopSeekerUserService = jopSeekerUserService;
+		this.jobPositionService = jobPositionService;
 	}
 	
 	@GetMapping("/getAll")
-	public DataResult<List<JopSeekerUser>> getAll(){
-		return this.jopSeekerUserService.getAll();
+	public DataResult<List<JobPositions>> getAll(){
+		return this.jobPositionService.gatAll();
 	}
 	
 	@PostMapping("/add")
-	public Result add(JopSeekerUser jopSeekerUser) {
-		return this.jopSeekerUserService.add(jopSeekerUser);
+	public Result add(JobPositions jobPositions) {
+		return this.jobPositionService.add(jobPositions);
 	}
 }

@@ -13,18 +13,18 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="jop_positions")
+@Table(name="job_positions")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JopPositions {
+public class JobPositions {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int Id;
 	
-	@Column(name="jop_name")
-	private String JopName;
+	@Column(name="job_name")
+	private String JobName;
 
 	@Column(name="position_id")
 	private int PositionId;

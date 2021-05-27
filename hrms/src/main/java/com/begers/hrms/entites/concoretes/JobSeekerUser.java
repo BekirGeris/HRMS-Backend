@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode (callSuper = false)
 @Entity
-@Table(name="Jop_Seekers")
+@Table(name="Job_Seekers")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JopSeekerUser extends User{
+public class JobSeekerUser extends User{
 
 	@Column(name="FirstName")
 	private String firstName;
