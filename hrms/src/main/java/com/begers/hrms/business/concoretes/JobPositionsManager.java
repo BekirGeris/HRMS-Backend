@@ -38,6 +38,10 @@ public class JobPositionsManager implements JobPositionService{
 			return new ErrorResult("Pozisyon adi boş olamaz.");
 		}
 		
+		if (jobPositionsDao.findByPositionName(jobPositions.getJobName()).equals(jobPositions)) {
+			return new ErrorResult("Bu pozisyon adı zaten var.");
+		}
+		
 		this.jobPositionsDao.save(jobPositions);
 		return new SuccessResult("Posizyon eklendi.");
 	}
