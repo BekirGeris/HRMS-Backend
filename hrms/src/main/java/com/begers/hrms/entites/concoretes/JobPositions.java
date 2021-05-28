@@ -21,12 +21,12 @@ public class JobPositions {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	private int Id;
+	private int id;
 	
 	@Column(name="job_name")
-	private String JobName;
+	private String jobName;
 
 	@Column(name="position_id")
-	private int PositionId;
+	private int positionId;
 	
 }

@@ -19,7 +19,6 @@ public class JobPositionsManager implements JobPositionService{
 
 	private JobPositionsDao jobPositionsDao;
 	
-	
 	@Autowired
 	public JobPositionsManager(JobPositionsDao jobPositionsDao) {
 		super();
@@ -34,12 +33,14 @@ public class JobPositionsManager implements JobPositionService{
 	@Override
 	public Result add(JobPositions jobPositions) {
 		
-		if (jobPositions.getJobName() == "") {
+		if (jobPositions.getJobName().equals("")) {
 			return new ErrorResult("Pozisyon adi boş olamaz.");
 		}
 		
-		if (jobPositionsDao.findByPositionName(jobPositions.getJobName()).getJobName().toLowerCase() == jobPositions.getJobName().toLowerCase()) {
-			return new ErrorResult("Bu pozisyon adı zaten var.");
+		if (jobPositionsDao.findByJobName(jobPositions.getJobName()) != null) {
+			if (jobPositionsDao.findByJobName(jobPositions.getJobName()).getJobName().toLowerCase().equals(jobPositions.getJobName().toLowerCase())) {
+				return new ErrorResult("Bu pozisyon adı zaten var.");
+			}
 		}
 		
 		this.jobPositionsDao.save(jobPositions);
