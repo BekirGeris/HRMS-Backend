@@ -38,7 +38,7 @@ public class JobPositionsManager implements JobPositionService{
 			return new ErrorResult("Pozisyon adi boş olamaz.");
 		}
 		
-		if (jobPositionsDao.findByPositionName(jobPositions.getJobName()).equals(jobPositions)) {
+		if (jobPositionsDao.findByPositionName(jobPositions.getJobName()).getJobName().toLowerCase() == jobPositions.getJobName().toLowerCase()) {
 			return new ErrorResult("Bu pozisyon adı zaten var.");
 		}
 		
