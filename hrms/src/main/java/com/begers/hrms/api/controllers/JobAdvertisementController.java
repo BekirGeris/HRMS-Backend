@@ -9,30 +9,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.begers.hrms.business.abstacts.JobPositionService;
+import com.begers.hrms.business.abstacts.JobAdvertisementService;
 import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.core.utilities.result.Result;
-import com.begers.hrms.entites.concoretes.JobPositions;
+import com.begers.hrms.entites.concoretes.JobAdvertisement;
 
 @RestController
-@RequestMapping("/api/JobPositions")
-public class JobPositionsController {
-	
-	private JobPositionService jobPositionService;
+@RequestMapping("/api/Advertisement")
+public class JobAdvertisementController {
+
+	JobAdvertisementService jobAdvertisementService;
 
 	@Autowired
-	public JobPositionsController(JobPositionService jobPositionService) {
+	public JobAdvertisementController(JobAdvertisementService jobAdvertisementService) {
 		super();
-		this.jobPositionService = jobPositionService;
+		this.jobAdvertisementService = jobAdvertisementService;
 	}
 	
 	@GetMapping("/getAll")
-	public DataResult<List<JobPositions>> getAll(){
-		return this.jobPositionService.gatAll();
+	public DataResult<List<JobAdvertisement>> getAll(){
+		return this.jobAdvertisementService.getAll();
 	}
 	
 	@PostMapping("/add")
-	public Result add(@RequestBody JobPositions jobPositions) {
-		return this.jobPositionService.add(jobPositions);
+	public Result add(@RequestBody JobAdvertisement jobAdvertisement) {
+		return this.jobAdvertisementService.add(jobAdvertisement);
 	}
 }

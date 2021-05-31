@@ -30,4 +30,5 @@ public class JobSeekerUser extends User{
 	
 	@Column(name="DateOfBirth")
 	private Date birthDay;
+
 }
