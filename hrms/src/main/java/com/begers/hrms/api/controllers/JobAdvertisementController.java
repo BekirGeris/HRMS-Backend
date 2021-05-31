@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.begers.hrms.business.abstacts.JobAdvertisementService;
@@ -34,5 +35,20 @@ public class JobAdvertisementController {
 	@PostMapping("/add")
 	public Result add(@RequestBody JobAdvertisement jobAdvertisement) {
 		return this.jobAdvertisementService.add(jobAdvertisement);
+	}
+	
+	@GetMapping("/getAllActive")
+	public DataResult<List<JobAdvertisement>> getByActiveJobAdvertisement(){
+		return this.jobAdvertisementService.getByActiveJobAdvertisement();
+	}
+	
+	@GetMapping("/getAllActiveSorted")
+	public DataResult<List<JobAdvertisement>> getByActiveSortedJobAdvertisement(@RequestParam int value){
+		return this.jobAdvertisementService.getAllActiveSortedJodAdvertisement(value);
+	}
+	
+	@GetMapping("/getAllActiveAndEmployerName")
+	public DataResult<List<JobAdvertisement>> getByActiveAndEmployerName(@RequestParam String employerName){
+		return this.jobAdvertisementService.getAllActiveAndEmployerName(employerName);
 	}
 }

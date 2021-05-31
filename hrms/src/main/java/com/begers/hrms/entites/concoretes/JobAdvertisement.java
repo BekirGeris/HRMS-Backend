@@ -28,7 +28,7 @@ public class JobAdvertisement {
 	private int id;
 	
 	@Column(name="is_active")
-	private boolean isActive;
+	private boolean active;
 	
 	@Column(name="job_description")
 	private String jobDescription;

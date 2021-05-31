@@ -3,6 +3,7 @@ package com.begers.hrms.business.concoretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.begers.hrms.business.abstacts.JobAdvertisementService;
@@ -33,6 +34,31 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	public Result add(JobAdvertisement jobAdvertisement) {
 		this.jobAdvertisementDao.save(jobAdvertisement);
 		return new SuccessResult("Ilan eklendi");
+	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getByActiveJobAdvertisement() {
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByActive(true), "Aktif ilanlar listelendi");
+	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getAllActiveSortedJodAdvertisement(int value) {
+		Sort sort;
+		String message;
+		if (value == 1) {
+			sort = Sort.by(Sort.Direction.ASC, "listingDate");
+			message = "Ilanlar en yeniden en eksiye siralandi";
+		}else {
+			sort = Sort.by(Sort.Direction.DESC, "listingDate");
+			message = "Ilanlar en eskiden en yeniye siralandi";
+		}
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByActive(true, sort), message);
+	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getAllActiveAndEmployerName(String EmployerName) {
+		return new SuccessDataResult<List<JobAdvertisement>>
+		(this.jobAdvertisementDao.getByActiveAndEmployerUser_CompanyName(true, EmployerName), "Is verene ait aktif ilanlar listelendi.");
 	}
 
 }

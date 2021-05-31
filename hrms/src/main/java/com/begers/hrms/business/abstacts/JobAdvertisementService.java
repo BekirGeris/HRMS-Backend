@@ -13,5 +13,12 @@ public interface JobAdvertisementService {
 
 	DataResult<List<JobAdvertisement>> getAll();
 	
+	DataResult<List<JobAdvertisement>> getByActiveJobAdvertisement();
+	
+	DataResult<List<JobAdvertisement>> getAllActiveSortedJodAdvertisement(int value);
+	
+	DataResult<List<JobAdvertisement>> getAllActiveAndEmployerName(String employerName);
+
 	Result add(JobAdvertisement jobAdvertisement);
+	
 }
