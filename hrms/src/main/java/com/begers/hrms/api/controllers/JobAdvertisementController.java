@@ -33,7 +33,7 @@ public class JobAdvertisementController {
 	}
 	
 	@PostMapping("/add")
-	public Result add(@RequestBody JobAdvertisement jobAdvertisement) {
+	public Result add(JobAdvertisement jobAdvertisement) {
 		return this.jobAdvertisementService.add(jobAdvertisement);
 	}
 	
