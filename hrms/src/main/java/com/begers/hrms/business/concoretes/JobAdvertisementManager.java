@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.begers.hrms.business.abstacts.JobAdvertisementService;
 import com.begers.hrms.core.utilities.result.DataResult;
+import com.begers.hrms.core.utilities.result.ErrorResult;
 import com.begers.hrms.core.utilities.result.Result;
 import com.begers.hrms.core.utilities.result.SuccessDataResult;
 import com.begers.hrms.core.utilities.result.SuccessResult;
@@ -59,6 +60,24 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	public DataResult<List<JobAdvertisement>> getAllActiveAndEmployerName(String EmployerName) {
 		return new SuccessDataResult<List<JobAdvertisement>>
 		(this.jobAdvertisementDao.getByActiveAndEmployerUser_CompanyName(true, EmployerName), "Is verene ait aktif ilanlar listelendi.");
+	}
+
+	@Override
+	public Result changedActivated(int jobAdvertisementId) {
+		JobAdvertisement jobAdvertisement = this.jobAdvertisementDao.getById(jobAdvertisementId);
+		
+		if (jobAdvertisement == null) {
+			return new ErrorResult("Bu id'ye sahip bir ilan bulunmamaktadir.");
+		}
+		
+		if (jobAdvertisement.isActive()) {
+			jobAdvertisement.setActive(false);
+			return new SuccessResult("Ilan kapatildi...");
+		}else {
+			jobAdvertisement.setActive(true);
+			return new SuccessResult("Ilan acildi...");
+		}
+		
 	}
 
 }

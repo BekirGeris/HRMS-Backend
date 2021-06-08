@@ -51,4 +51,9 @@ public class JobAdvertisementController {
 	public DataResult<List<JobAdvertisement>> getByActiveAndEmployerName(@RequestParam String employerName){
 		return this.jobAdvertisementService.getAllActiveAndEmployerName(employerName);
 	}
+	
+	@GetMapping("/changedActivated")
+	public Result changedActivated(int jobAdvertisementId) {
+		return this.jobAdvertisementService.changedActivated(jobAdvertisementId);
+	}
 }

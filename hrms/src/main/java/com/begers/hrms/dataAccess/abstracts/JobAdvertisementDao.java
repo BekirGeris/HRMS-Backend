@@ -11,6 +11,8 @@ import com.begers.hrms.entites.concoretes.JobAdvertisement;
 @Repository
 public interface JobAdvertisementDao extends  JpaRepository<JobAdvertisement, Integer>{
 
+	JobAdvertisement getById(int id);
+	
 	List<JobAdvertisement> getByActive(boolean active);
 	
 	List<JobAdvertisement> getByActive(boolean active, Sort sort);

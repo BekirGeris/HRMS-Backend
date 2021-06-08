@@ -21,4 +21,5 @@ public interface JobAdvertisementService {
 
 	Result add(JobAdvertisement jobAdvertisement);
 	
+	Result changedActivated(int jobAdvertisementId);
 }
