@@ -19,9 +19,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="job_positions")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","jobAdvertisements"})
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","jobAdvertisements"})
 public class JobPositions {
 	
 	@Id

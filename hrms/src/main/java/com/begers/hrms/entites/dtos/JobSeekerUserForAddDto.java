@@ -1,4 +1,4 @@
-package com.begers.hrms.entites.concoretes.dtos;
+package com.begers.hrms.entites.dtos;
 
 import java.util.Date;
 
