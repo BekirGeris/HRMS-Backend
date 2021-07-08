@@ -1,6 +1,5 @@
 package com.begers.hrms.entites.concoretes;
 
-import java.net.URL;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
