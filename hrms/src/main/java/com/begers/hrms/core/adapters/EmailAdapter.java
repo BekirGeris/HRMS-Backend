@@ -1,4 +1,4 @@
-package com.begers.hrms.core.utilities.adapters;
+package com.begers.hrms.core.adapters;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

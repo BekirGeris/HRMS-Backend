@@ -1,4 +1,4 @@
-package com.begers.hrms.core.utilities.adapters;
+package com.begers.hrms.core.adapters;
 
 public interface EmailService {
 	boolean isOkay(String email);
