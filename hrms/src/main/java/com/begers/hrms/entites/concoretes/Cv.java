@@ -38,6 +38,9 @@ public class Cv {
 	@Column(name="Last_Name")
 	private String lastName;
 	
+	@Column(name="Email")
+	private String email;
+	
 	@Column(name="Birth_Day")
 	private Date birthDay;
 	

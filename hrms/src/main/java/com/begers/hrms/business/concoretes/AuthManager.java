@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.begers.hrms.business.abstacts.AuthService;
-import com.begers.hrms.core.utilities.adapters.EmailService;
-import com.begers.hrms.core.utilities.adapters.MernisService;
+import com.begers.hrms.core.adapters.EmailService;
+import com.begers.hrms.core.adapters.MernisService;
 import com.begers.hrms.dataAccess.abstracts.UserDao;
 
 @Service
