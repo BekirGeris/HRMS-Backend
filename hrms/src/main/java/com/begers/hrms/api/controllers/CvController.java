@@ -50,6 +50,11 @@ public class CvController {
 		return this.cvService.getAll();
 	}
 	
+	@GetMapping("/getAllSorted")
+	DataResult<List<Cv>> getAllSorted(int value){
+		return this.cvService.findAll(value);
+	}
+	
 	@GetMapping("/findEmail")
 	DataResult<Cv> findByEmail(@RequestParam String email){
 		return this.cvService.findByEmail(email);
