@@ -10,14 +10,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","cv"})
 @Table(name="Language")
 public class Language {
 
@@ -32,6 +38,7 @@ public class Language {
 	@Column(name="Level")
 	private int level;
 	
+	@JsonIgnore
 	@ManyToOne()
     @JoinColumn(name = "Cv_Id")
 	private Cv cv;

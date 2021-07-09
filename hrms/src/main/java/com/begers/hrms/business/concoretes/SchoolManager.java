@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.begers.hrms.business.abstacts.SchoolService;
 import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.core.utilities.result.Result;
+import com.begers.hrms.core.utilities.result.SuccessDataResult;
+import com.begers.hrms.core.utilities.result.SuccessResult;
 import com.begers.hrms.dataAccess.abstracts.SchoolDao;
 import com.begers.hrms.entites.concoretes.School;
 
@@ -24,25 +26,22 @@ public class SchoolManager implements SchoolService{
 
 	@Override
 	public DataResult<School> getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new SuccessDataResult<School>(this.schoolDao.getById(id), "School bilgisi getirildi.");
 	}
 
 	@Override
 	public DataResult<List<School>> getByCv_Id(int cvId) {
-		// TODO Auto-generated method stub
-		return null;
+		return new SuccessDataResult<List<School>>(this.schoolDao.getByCv_Id(cvId), "Cv ye ait schools bilgisi listelendi.");
 	}
 
 	@Override
 	public Result add(School school) {
-		// TODO Auto-generated method stub
-		return null;
+		this.schoolDao.save(school);
+		return new SuccessResult("School eklendi.");
 	}
 
 	@Override
 	public DataResult<List<School>> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return new SuccessDataResult<List<School>>(null, null);
 	}
 }

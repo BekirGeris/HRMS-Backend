@@ -9,14 +9,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","cv"})
 @Table(name="Programming_Skill")
 public class ProgrammingSkill {
 
@@ -28,6 +34,7 @@ public class ProgrammingSkill {
 	@Column(name="Program_Or_Technology_Name")
 	private String programOrTechnologyName;
 	
+	@JsonIgnore
 	@ManyToOne()
     @JoinColumn(name = "Cv_Id")
 	private Cv cv;

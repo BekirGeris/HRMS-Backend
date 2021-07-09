@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -46,11 +46,11 @@ public class Cv {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cv")
-	private CoverLetter coverLetter;
+	private List<School> schools;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="cv")
-	private List<School> schools;
+	@OneToOne(mappedBy="cv")
+	private CoverLetter coverLetter;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="cv")
@@ -65,7 +65,7 @@ public class Cv {
 	private List<JobExperience> jobExperiences;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="cv")
+	@OneToOne(mappedBy="cv")
 	private Image image;
 	             
 	@JsonIgnore

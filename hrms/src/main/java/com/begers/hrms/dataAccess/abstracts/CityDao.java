@@ -5,9 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.begers.hrms.entites.concoretes.City;
 
+
 @Repository
 public interface CityDao extends JpaRepository<City, Integer>{
 
-	City getById(int id);
+	City getByCityId(int id);
 	
 }

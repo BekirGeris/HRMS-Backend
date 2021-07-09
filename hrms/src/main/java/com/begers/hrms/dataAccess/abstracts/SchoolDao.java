@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.begers.hrms.entites.concoretes.School;
 
 @Repository
-public interface SchoolDao extends JpaRepository<SchoolDao, Integer>{
+public interface SchoolDao extends JpaRepository<School, Integer>{
 	
 	School getById(int id);
 	

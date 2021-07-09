@@ -9,16 +9,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","cv"})
 @Table(name="image")
 public class Image {
 
@@ -33,7 +40,8 @@ public class Image {
 	@Column(name="Creation_Date")
 	private LocalDate creationDate;
 	
-	@ManyToOne()
+	@JsonIgnore
+	@OneToOne()
     @JoinColumn(name = "Cv_Id")
 	private Cv cv;
 }
