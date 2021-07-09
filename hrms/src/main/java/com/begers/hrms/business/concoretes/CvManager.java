@@ -3,6 +3,7 @@ package com.begers.hrms.business.concoretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.begers.hrms.business.abstacts.CvService;
@@ -54,6 +55,21 @@ public class CvManager implements CvService {
 	@Override
 	public DataResult<List<Cv>> getAll() {
 		return new SuccessDataResult<List<Cv>>(this.cvDao.findAll(), "Tüm cv ler listelendi");
+	}
+
+	@Override
+	public DataResult<List<Cv>> findAll(int value) {
+		Sort sort;
+		String message;
+		if (value == 1) {
+			sort = Sort.by(Sort.Direction.ASC, "listingDate");
+			message = "Ilanlar en yeniden en eksiye siralandi";
+		}else {
+			sort = Sort.by(Sort.Direction.DESC, "listingDate");
+			message = "Ilanlar en eskiden en yeniye siralandi";
+		}
+		return new SuccessDataResult<List<Cv>>(this.cvDao.findAll(sort), message);
+	
 	}
 
 }
