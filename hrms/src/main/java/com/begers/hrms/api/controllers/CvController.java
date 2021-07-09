@@ -56,7 +56,7 @@ public class CvController {
 	}
 	
 	@GetMapping("/findEmail")
-	DataResult<Cv> findByEmail(@RequestParam String email){
+	DataResult<List<Cv>> findByEmail(@RequestParam String email){
 		return this.cvService.findByEmail(email);
 	}
 	

@@ -19,7 +19,9 @@ public interface CvService {
 	
 	DataResult<List<Cv>> findAll(int value);
 	
-	DataResult<Cv> findByEmail(String email);
+	DataResult<List<Cv>> findByEmail(String email);
+	
+	List<Cv> getByEmail(String email);
 	
 	DataResult<Cv> findByFirstNameAndLastName(String firstName, String lastName);
 	

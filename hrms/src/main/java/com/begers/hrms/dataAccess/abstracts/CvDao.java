@@ -14,7 +14,7 @@ public interface CvDao extends JpaRepository<Cv, Integer>{
 	
 	List<Cv> findAll(Sort sort);
 	
-	Cv findByEmail(String email);
+	List<Cv> findByEmail(String email);
 	
 	Cv findByFirstNameAndLastName(String firstName, String lastName);
 	

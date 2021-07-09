@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.begers.hrms.business.abstacts.JobSeekerUserService;
 import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.core.utilities.result.Result;
+import com.begers.hrms.entites.concoretes.Cv;
 import com.begers.hrms.entites.concoretes.JobSeekerUser;
 
 @RestController
@@ -33,5 +34,10 @@ public class JobSeekerUserController {
 	@PostMapping("/add")
 	public Result add(JobSeekerUser jobSeekerUser) {
 		return this.jobSeekerUserService.add(jobSeekerUser);
+	}
+	
+	@GetMapping("/getAllJobSeekerCv")
+	public DataResult<List<Cv>> getJobSeekerCv(int id){
+		return this.jobSeekerUserService.getJobSeekerCv(id);
 	}
 }

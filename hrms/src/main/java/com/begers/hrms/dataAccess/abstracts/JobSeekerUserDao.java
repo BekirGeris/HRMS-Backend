@@ -8,4 +8,6 @@ import com.begers.hrms.entites.concoretes.JobSeekerUser;
 @Repository
 public interface JobSeekerUserDao extends JpaRepository<JobSeekerUser, Integer>{
 
+	JobSeekerUser getById(int id);
+	
 }

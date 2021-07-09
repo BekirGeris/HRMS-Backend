@@ -26,8 +26,8 @@ public class CvManager implements CvService {
 	}
 
 	@Override
-	public DataResult<Cv> findByEmail(String email) {
-		return new SuccessDataResult<Cv>(this.cvDao.findByEmail(email), "Cv getirildi.");
+	public DataResult<List<Cv>> findByEmail(String email) {
+		return new SuccessDataResult<List<Cv>>(this.cvDao.findByEmail(email), "Cvler getirildi.");
 	}
 
 	@Override
@@ -70,6 +70,11 @@ public class CvManager implements CvService {
 		}
 		return new SuccessDataResult<List<Cv>>(this.cvDao.findAll(sort), message);
 	
+	}
+
+	@Override
+	public List<Cv> getByEmail(String email) {
+		return this.cvDao.findByEmail(email);
 	}
 
 }
