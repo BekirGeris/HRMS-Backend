@@ -15,5 +15,5 @@ public interface LanguageService {
 	
 	DataResult<Language> getById(int id);
 	
-	DataResult<List<Language> > getByCv_Id(int cvId);
+	DataResult<List<Language>> getByCv_Id(int cvId);
 }

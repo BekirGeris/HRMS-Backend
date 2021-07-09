@@ -1,19 +1,11 @@
 package com.begers.hrms.business.concoretes;
 
 import java.util.List;
-import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.begers.hrms.business.abstacts.CoverLetterService;
 import com.begers.hrms.business.abstacts.CvService;
-import com.begers.hrms.business.abstacts.ImageService;
-import com.begers.hrms.business.abstacts.JobExperienceService;
-import com.begers.hrms.business.abstacts.LanguageService;
-import com.begers.hrms.business.abstacts.ProgrammingSkillService;
-import com.begers.hrms.business.abstacts.SchoolService;
-import com.begers.hrms.business.abstacts.SocialMediaAccountService;
 import com.begers.hrms.core.utilities.result.DataResult;
 import com.begers.hrms.core.utilities.result.Result;
 import com.begers.hrms.core.utilities.result.SuccessDataResult;
