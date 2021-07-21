@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="Cv")
+@Table(name="cv")
 public class Cv {
 
 	@Id
