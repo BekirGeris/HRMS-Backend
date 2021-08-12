@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,6 +34,12 @@ public class JobAdvertisement {
 	@Column(name="is_active")
 	private boolean active;
 	
+	@Column(name="remote")
+	private boolean remote;
+	
+	@Column(name="full_time")
+	private boolean fullTime;
+	
 	@Column(name="job_description")
 	private String jobDescription;
 	
@@ -47,18 +54,22 @@ public class JobAdvertisement {
 	
 	@Column(name="application_deadline")
 	private LocalDate applicationDeadline;
-	
+
+	@JsonIgnore
 	@Column(name="listing_date")
 	private LocalDate listingDate = LocalDate.now();
-	
+
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="position_id")
 	private JobPositions jobPositions;
-	
+
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="user_id") 
 	private EmployerUser employerUser;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="city_id")
 	private City city;
